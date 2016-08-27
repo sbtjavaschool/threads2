@@ -18,8 +18,5 @@ public class SemaphoreMain {
 
     public static void main(String[] args) {
 
-
-
-
     }
 }
