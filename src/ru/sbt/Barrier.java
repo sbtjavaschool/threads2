@@ -10,20 +10,18 @@ public class Barrier {
     }
 
     public synchronized void await() {
-        if (++currentThread == nThread) {
-            currentThread = 0;
-            ++round;
+        if (++currentThread % nThread == 0) {
             notifyAll();
             return;
         }
 
-        int currentRound = round;
-        while (currentThread < nThread && currentRound == round) {
+        while (currentThread % nThread != 0) {
             try {
                 wait();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
+
     }
 }
