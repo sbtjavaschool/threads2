@@ -29,7 +29,7 @@ public class Runner {
 
     private void doSleep() {
         try {
-            Thread.sleep(10);
+            Thread.sleep(20);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -39,8 +39,8 @@ public class Runner {
         int distance = 1000;
 
         Barrier barrier = new Barrier(3);
-        newThread("vasya", distance, 3, barrier).start();
-        newThread("bolt", distance, 10, barrier).start();
+        newThread("vasya", distance, 10, barrier).start();
+        newThread("bolt", distance, 20, barrier).start();
         newThread("myDog", distance, 30, barrier).start();
     }
 
