@@ -23,7 +23,7 @@ public class Sync2Example {
         finish = true;
 
         synchronized (this) {
-            notify();
+            notifyAll();
         }
     }
 
